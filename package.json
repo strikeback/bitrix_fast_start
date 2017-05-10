@@ -1,0 +1,33 @@
+{
+  "name": "gen-msnet",
+  "version": "1.0.0",
+  "description": "for msnet",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-imagemin": "*",
+    "imagemin-pngquant": "*"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.0.1",
+    "gulp-cssnano": "^1.1.0",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-postcss": "^6.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.4.0",
+    "gulp-watch": "^4.3.5",
+    "postcss-flexboxfixer": "0.0.3",
+    "postcss-flexbugs-fixes": "^1.0.0",
+    "postcss-focus": "^1.0.0",
+    "postcss-svg": "^1.0.1",
+    "postcss-svg-fallback": "^1.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rad1calDreamer",
+  "license": "ISC",
+  "repository": "https://gist.github.com/e5326418d38078032018.git"
+}
