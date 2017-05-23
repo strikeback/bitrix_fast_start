@@ -91,7 +91,29 @@
     -webkit-transform-origin: $origin;
     transform-origin: $origin;
 }
- 
+.flex-space-between {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.flex-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.flex-justify-between {
+    display: flex;
+    justify-content: space-between;
+}
+.flex-justify-left {
+    display: flex;
+    justify-content: left;
+}
+.flex-justify-around {
+    display: flex;
+    justify-content: space-around;
+}
 
 .container_10 {
     padding: 0 10px;
