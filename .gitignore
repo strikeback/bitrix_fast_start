@@ -1,0 +1,14 @@
+/bitrix/*
+/node_modules/*
+/upload/*
+/nbproject/*
+/bitrix/cache/
+/bitrix/.settings.php
+/bitrix/php_interface/dbconn.php
+/.idea
+*.sql
+*.zip
+*.xml
+*.html
+test.php
+/*.htaccess
