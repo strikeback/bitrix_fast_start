@@ -21,6 +21,20 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                 )
         );
         ?>
+
+        <meta property="og:image" content="<?= $APPLICATION->ShowProperty("og_image"); ?>"/>
+        <meta property="og:image:url" content="<?= $APPLICATION->ShowProperty("og_image"); ?>"/>
+        <meta property="og:title" content="<?= $APPLICATION->ShowProperty("og_title"); ?>"/>
+        <meta property="og:description" content="<?= $APPLICATION->ShowProperty("og_description"); ?>"/>
+        <meta property="og:url" content="<?= $APPLICATION->ShowProperty("og_url"); ?>"/>
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="<?= $APPLICATION->ShowProperty("og_url"); ?>" />
+        <meta name="twitter:title" content="<?= $APPLICATION->ShowProperty("og_title"); ?>" />
+        <meta name="twitter:description" content="<?= $APPLICATION->ShowProperty("og_description"); ?>" />
+        <meta name="twitter:image:src" content="<?= $APPLICATION->ShowProperty("og_image"); ?>" />
+
+        <link rel="image_src" href="<?= $APPLICATION->ShowProperty("og_image"); ?>" />
     </head>
     <body>
         <div id="panel">
