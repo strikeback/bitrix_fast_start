@@ -1,8 +1,12 @@
-<? //favicon          ?>
-<? $APPLICATION->SetAdditionalCSS('/_css/bootstrap.min.css'); ?>
+<? //favicon                    ?>
+<? $APPLICATION->AddHeadScript('/_plugins/jquery-2.1.4.min.js'); ?>
+
+<? $APPLICATION->SetAdditionalCSS('/_plugins/bootstrap/bootstrap.min.css'); ?>
+<? $APPLICATION->AddHeadScript('/_plugins/bootstrap/bootstrap.min.js'); ?>
+
+<? $APPLICATION->SetAdditionalCSS('/_plugins/uikit/css/uikit.min.css'); ?>
+<? $APPLICATION->AddHeadScript('/_plugins/uikit/js/uikit.min.js'); ?>
+
+
 <? $APPLICATION->SetAdditionalCSS('/_css/styles.css'); ?>
-
-<? $APPLICATION->AddHeadScript('/_js/jquery-2.1.4.min.js'); ?>
-<? $APPLICATION->AddHeadScript('/_js/bootstrap.min.js'); ?>
-
 <? $APPLICATION->AddHeadScript('/_js/scripts.min.js'); ?>
