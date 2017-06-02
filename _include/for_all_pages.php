@@ -1,4 +1,4 @@
-<? //favicon                      ?>
+<? //favicon                        ?>
 <? $APPLICATION->AddHeadScript('/_plugins/jquery-2.1.4.min.js'); ?>
 
 <? $APPLICATION->SetAdditionalCSS('/_plugins/bootstrap/css/bootstrap.min.css'); ?>
@@ -9,4 +9,5 @@
 
 
 <? $APPLICATION->SetAdditionalCSS('/_css/styles.css'); ?>
+<? $APPLICATION->AddHeadScript('/_js/functions.min.js'); ?>
 <? $APPLICATION->AddHeadScript('/_js/scripts.min.js'); ?>
