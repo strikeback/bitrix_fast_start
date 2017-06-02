@@ -6,7 +6,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 <html>
     <head>
         <? $APPLICATION->ShowHead(); ?>
-        <meta name="viewport" content="width=1100">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.png"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title><? $APPLICATION->ShowTitle(); ?></title>
