@@ -12,3 +12,7 @@
 *.html
 test.php
 /*.htaccess
+.sass-cache
+.usermin
+.xlsx
+.csv

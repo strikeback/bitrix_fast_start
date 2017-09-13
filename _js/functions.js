@@ -1,3 +1,53 @@
+function sendYandexGoal(_target) {
+    yaCounter37696905.reachGoal(_target);
+    ga('send', 'pageview', '/' + _target + '.html');
+}
+function myValidateForm(form) {
+    var _items = form.find(".req");
+    form.find(".req").removeClass("error");
+    var _valid = true;
+    form.find('.req').each(function (index, el) { /*проверка заполнения*/
+        var _input = $(el);
+        if (_input.val() == "") {
+            $(el).addClass('error');
+            _valid = false;
+        }
+        if (_input.attr("type") == "checkbox" && _input.prop("checked") == false) {
+            $(el).addClass('error');
+            _valid = false;
+        }
+        if (_input.attr("name") === "EMAIL" && _input.val() === "") {
+        } else if (_input.attr("name") === "EMAIL" && !isValidEmailAddress(_input.val())) {
+            $(el).addClass('error');
+            _valid = false;
+        }
+        if (_input.attr("name") === "PASSWORD") {
+            var _has_password_error = false;
+            if (_input.val() === "") {
+            } else if (_input.val().length < 6) {
+                _has_password_error = true;
+            }
+            if (_has_password_error) {
+                $(el).addClass('error');
+                _valid = false;
+            }
+        }
+        if (_input.attr("name") === "CONFIRM_PASSWORD") {
+            var _has_password_confirm_error = false;
+            var _password = form.find(".req[name=PASSWORD]");
+            if (_input.val() === "") {
+            } else if (_input.val() !== _password.val()) {
+                _has_password_confirm_error = true;
+            }
+            if (_has_password_confirm_error) {
+                $(el).addClass('error');
+                _valid = false;
+            }
+        }
+    });
+    return _valid;
+}
+
 function SendAjax(_action, _data, _callBack) {
     _callBack = _callBack || function () {
     };

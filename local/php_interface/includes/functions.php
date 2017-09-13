@@ -1,4 +1,4 @@
-<?php
+<?
 
 /**
  * svg - инклудит минифицированный svg
@@ -43,4 +43,56 @@ function setSEO($title, $description, $image, $url) {
     $APPLICATION->SetPageProperty("og_description", strip_tags(htmlspecialchars_decode($description)));
     $APPLICATION->SetPageProperty("og_image", $host . $image);
     $APPLICATION->SetPageProperty("og_url", $host . $url);
+    return array(
+        "title" => $title,
+        "description" => $description,
+        "url" => $host . $url,
+        "image" => $host . $image
+    );
+}
+
+function getSettings() {
+    CModule::IncludeModule("iblock");
+    $arOrder = array();
+    $arFilter = array(
+        "IBLOCK_ID" => 4,
+    );
+    $arSelect = array();
+    $db_res = CIBlockElement::GetList($arOrder, $arFilter, false, false, $arSelect);
+    if ($res = $db_res->GetNextElement()) {
+        $arItem = $res->GetFields();
+        $arItem["PROPERTIES"] = $res->GetProperties();
+        $GLOBALS["SETTINGS"] = array();
+        foreach ($arItem["PROPERTIES"] as $prop) {
+            $GLOBALS["SETTINGS"][$prop["CODE"]] = $prop["~VALUE"];
+        }
+    }
+}
+
+function getSettingsProp($prop) {
+    global $SETTINGS;
+    return $SETTINGS[$prop];
+}
+
+/**
+ * Убираем лишние символы из телефона
+ * @param [type] $PHONE [Номер телефона вида +7 (999) 999-99-99]
+ */
+function clearPhone($PHONE) {
+    $patterns_replace = array(
+        '#\(#',
+        '#\)#',
+        '#\s#',
+        '# #',
+        '#\-#',
+    );
+    $replace_arr = array(
+        "",
+        "",
+        "",
+        "",
+        "",
+    );
+    $PHONE_CLEAR = preg_replace($patterns_replace, $replace_arr, $PHONE);
+    return $PHONE_CLEAR;
 }
