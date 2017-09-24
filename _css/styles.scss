@@ -1,96 +1,8 @@
-@mixin border_radius($size) {
-    -webkit-border-radius: $size;
-    -moz-border-radius: $size;
-    border-radius: $size;
-}
+@charset "UTF-8";
+@import "_fonts.scss";
+@import "_variables.scss";
 
-@mixin shadow($param) {
-    -webkit-box-shadow: $param;
-    -moz-box-shadow: $param;
-    box-shadow: $param;
-}
 
-@mixin trans($secs) {
-    -webkit-transition: all $secs ease;
-    -moz-transition: all $secs ease;
-    -o-transition: all $secs ease;
-    -ms-transition: all $secs ease;
-    transition: all $secs ease;
-}
-
-@mixin b_64($val) {
-    background-image: url($val);
-}
-
-@mixin base_64($val) {
-    background-image: url('data:image/png;base64,' + $val);
-}
-
-@mixin base_64_important($val) {
-    background-image: url('data:image/png;base64,' + $val) !important;
-}
-
-@mixin pl_color($color) {
-    &::-webkit-input-placeholder {
-        color: $color;
-    }
-    &::-moz-placeholder {
-        color: $color;  
-    }
-} 
-
-@mixin flexbox() {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-}
-
-@mixin flex($values) {
-    -webkit-box-flex: $values;
-    -moz-box-flex:  $values;
-    -webkit-flex:  $values;
-    -ms-flex:  $values;
-    flex:  $values;
-}
-
-@mixin transform($transforms) {
-    -moz-transform: $transforms;
-    -o-transform: $transforms;
-    -ms-transform: $transforms;
-    -webkit-transform: $transforms;
-    transform: $transforms;
-}
-
-// rotate
-@mixin rotate($deg) {
-    @include transform(rotate(#{$deg}deg));
-}
-
-// scale
-@mixin scale($scale) {
-    @include transform(scale($scale));
-}
-
-// translate
-@mixin translate($x, $y) {
-    @include transform(translate($x, $y));
-}
-
-// skew
-@mixin skew($x, $y) {
-    @include transform(skew(#{$x}deg, #{$y}deg));
-}
-
-//transform origin
-@mixin transform-origin($origin) {
-    moz-transform-origin: $origin;
-    -o-transform-origin: $origin;
-    -ms-transform-origin: $origin;
-    -webkit-transform-origin: $origin;
-    transform-origin: $origin;
-}
 .flex-space-between {
     display: flex;
     flex-direction: column;
@@ -204,3 +116,8 @@
 }
 
 
+
+body, html {
+    font-family: $ff_geomteria;
+    background-color: #f6f6f6;
+}
