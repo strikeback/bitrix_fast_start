@@ -55,7 +55,7 @@ function getSettings() {
     CModule::IncludeModule("iblock");
     $arOrder = array();
     $arFilter = array(
-        "IBLOCK_ID" => 4,
+        "IBLOCK_ID" => 1,
     );
     $arSelect = array();
     $db_res = CIBlockElement::GetList($arOrder, $arFilter, false, false, $arSelect);
@@ -64,6 +64,9 @@ function getSettings() {
         $arItem["PROPERTIES"] = $res->GetProperties();
         $GLOBALS["SETTINGS"] = array();
         foreach ($arItem["PROPERTIES"] as $prop) {
+            if ($prop["PROPERTY_TYPE"] == "F") {
+                $prop["~VALUE"] = CFile::GetPath($prop["~VALUE"]);
+            }
             $GLOBALS["SETTINGS"][$prop["CODE"]] = $prop["~VALUE"];
         }
     }
@@ -95,4 +98,13 @@ function clearPhone($PHONE) {
     );
     $PHONE_CLEAR = preg_replace($patterns_replace, $replace_arr, $PHONE);
     return $PHONE_CLEAR;
+}
+
+//Получение информации о пользователе по ID
+function getUserFieldsByID($ID) {
+    global $USER;
+    $rsUser = CUser::GetById($ID);
+    $arUser = $rsUser->Fetch();
+    $arUser["ARRGROUPS"] = $USER->GetUserGroupArray();
+    return $arUser;
 }

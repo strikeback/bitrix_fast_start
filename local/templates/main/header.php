@@ -21,6 +21,8 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                 )
         );
         ?>
+<!--        <meta name="theme-color" content="#fff">
+        <meta name="msapplication-TileColor" content="#fff">-->
 
         <meta property="og:image" content="<?= $APPLICATION->ShowProperty("og_image"); ?>"/>
         <meta property="og:image:url" content="<?= $APPLICATION->ShowProperty("og_image"); ?>"/>
