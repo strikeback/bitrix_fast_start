@@ -1,0 +1,11 @@
+@mixin b_64($val) {
+  background-image: url($val);
+}
+
+@mixin base_64($val) {
+  background-image: url('data:image/png;base64,' + $val);
+}
+
+@mixin base_64_important($val) {
+  background-image: url('data:image/png;base64,' + $val) !important;
+}
