@@ -23,7 +23,7 @@ var path = {
   },
   watch: {//Тут мы укажем, за изменением каких файлов мы хотим наблюдать
     js: ['_js/**/*.js', '!_js/**/*.min.js', '!_js/**/*-min.js'],
-    style: '_css/**/*.scss',
+    style: ['_css/*.scss', '_css/block/*.scss', '_css/system/*.scss'],
     img: '_images/src/**/*.*'
   },
   clean: './build'
@@ -68,7 +68,7 @@ gulp.task('build', [
 ]);
 
 gulp.task('watch', function () {
-  watch([path.watch.style], function (event, cb) {
+  watch(path.watch.style, function (event, cb) {
     gulp.start('style:build');
   });
   watch(path.watch.js, function (event, cb) {/*тут уже в параметре массив*/

@@ -18,10 +18,6 @@ function removeHttp($url) {
   return $url;
 }
 
-function formatPrice($val) {
-  return number_format($val, 0, '.', ' ');
-}
-
 // возвращает склонение от числа: declination(10, 'день', 'дня', 'дней')
 function declination($num, $one, $ed, $mn, $full = true) {
   if ((int) $num == 0)
@@ -113,4 +109,8 @@ function dateFormat($date) {
   $event_date = MakeTimeStamp($date);
   $month = FormatDate("F", $event_date);
   return date("d", $event_date) . " " . $month . " " . date("Y", $event_date);
+}
+
+function formatPrice($val) {
+  return number_format(str_replace(' ', '', $val), 0, '.', ' ');
 }

@@ -9,3 +9,12 @@
 @mixin base_64_important($val) {
   background-image: url('data:image/png;base64,' + $val) !important;
 }
+
+@mixin pl_color($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  } 
+  &::-moz-placeholder {
+    color: $color;
+  }
+}
