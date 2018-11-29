@@ -63,6 +63,15 @@ function getSettings() {
       if ($prop["PROPERTY_TYPE"] == "F") {
         $prop["~VALUE"] = CFile::GetPath($prop["~VALUE"]);
       }
+      if ($prop["USER_TYPE"] == "HTML") {
+        $prop["~VALUE"] = $prop["~VALUE"]["TEXT"];
+      }
+      if ($prop["PROPERTY_TYPE"] == "S" && $prop["WITH_DESCRIPTION"] == "Y") {
+        $prop["~VALUE"] = [
+            'VALUE' => $prop["~VALUE"],
+            'DESCRIPTION' => $prop["~DESCRIPTION"],
+        ];
+      }
       $GLOBALS["SETTINGS"][$prop["CODE"]] = $prop["~VALUE"];
     }
   }
