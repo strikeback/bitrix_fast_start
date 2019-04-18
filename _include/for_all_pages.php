@@ -16,5 +16,4 @@
 <? $APPLICATION->AddHeadScript('/_plugins/mask/jquery.maskedinput.min.js'); ?>
 
 <? $APPLICATION->SetAdditionalCSS('/_css/styles.css'); ?>
-<? $APPLICATION->AddHeadScript('/_js/functions.min.js'); ?>
-<? $APPLICATION->AddHeadScript('/_js/scripts.min.js'); ?>
+<? $APPLICATION->AddHeadScript('/_js/all.min.js'); ?>
