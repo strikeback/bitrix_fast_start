@@ -1,6 +1,6 @@
 <?
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
-    die();
+  die();
 
 $APPLICATION->IncludeComponent("bitrix:main.include", "", Array(
     "AREA_FILE_SHOW" => "file",
@@ -11,6 +11,10 @@ $APPLICATION->IncludeComponent("bitrix:main.include", "", Array(
         )
 );
 ?>
+
+<? $APPLICATION->ShowHeadScripts(); ?>
+<? $APPLICATION->ShowCSS(); ?>
+
 </div>
 </body>
 </html>
