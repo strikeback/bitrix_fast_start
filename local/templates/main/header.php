@@ -47,14 +47,14 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     <div id="panel">
       <? $APPLICATION->ShowPanel(); ?>
     </div>
-    <div class="wrapper">
-      <?
-      $APPLICATION->IncludeComponent("bitrix:main.include", "", Array(
-          "AREA_FILE_SHOW" => "file",
-          "PATH" => "/_include/header.php",
-          "AREA_FILE_SUFFIX" => "inc",
-          "AREA_FILE_RECURSIVE" => "N",
-          "EDIT_TEMPLATE" => ""
-              )
-      );
-      ?>
+
+    <?
+    $APPLICATION->IncludeComponent("bitrix:main.include", "", Array(
+        "AREA_FILE_SHOW" => "file",
+        "PATH" => "/_include/header.php",
+        "AREA_FILE_SUFFIX" => "inc",
+        "AREA_FILE_RECURSIVE" => "N",
+        "EDIT_TEMPLATE" => ""
+            )
+    );
+    ?>

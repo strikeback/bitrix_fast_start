@@ -15,5 +15,5 @@ use Bitrix\Main\Page\Asset;
 
 <? Asset::getInstance()->addJs('/_plugins/mask/jquery.maskedinput.min.js'); ?>
 
-<? $APPLICATION->SetAdditionalCSS('/_css/global.css'); ?> 
+<? $APPLICATION->SetAdditionalCSS('/_css/styles.css'); ?> 
 <? Asset::getInstance()->addJs('/_js/all.min.js'); ?>

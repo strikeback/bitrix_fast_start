@@ -1,3 +1,16 @@
+* {
+  box-sizing: border-box;
+  outline: none !important;
+}
+
+sup, sub {
+  font-size: 70%;
+}
+
 body, html {
-  font-family: $ff_FONTNAME;
+  font-family: $ff_main;
+  font-size: 16px;
+  line-height: 22px;  
+  color: #000000;
+  min-height: 100%;
 }
