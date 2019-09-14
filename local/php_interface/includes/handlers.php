@@ -1,11 +1,25 @@
 <?php
 
+\Bitrix\Main\EventManager::getInstance()->addEventHandler('main', 'OnEndBufferContent', 'asloading');
+
+function asloading(&$content) {
+  if (!\Bitrix\Main\Context::getCurrent()->getRequest()->isAdminSection()) {
+    $r1 = 'type=text/css  rel=stylesheet';
+    $r2 = 'rel="preload" as="style" onload="this.onload=null;this.rel=\'stylesheet\'"';
+    $content = str_replace($r1, $r2, $content);
+
+    $r1 = 'type=text/css  data-template-style=true  rel=stylesheet';
+    $r2 = 'rel="preload" as="style" onload="this.onload=null;this.rel=\'stylesheet\'"';
+    $content = str_replace($r1, $r2, $content);
+  };
+}
+
 AddEventHandler("main", "OnEndBufferContent", "ChangeMyContent");
 
 function ChangeMyContent(&$content) {
   global $USER;
   if (!$USER->IsAdmin()) {
-    $content = sanitize_output($content);
+//    $content = sanitize_output($content);
   }
 }
 
