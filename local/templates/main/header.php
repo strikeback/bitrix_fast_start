@@ -9,7 +9,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.png"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><? $APPLICATION->ShowTitle(); ?></title>
-    <? CUtil::InitJSCore(array('jquery', 'window', 'popup', 'ajax', 'date')); ?> 
+    <? // CUtil::InitJSCore(array('jquery', 'window', 'popup', 'ajax', 'date')); ?> 
     <?
     $APPLICATION->IncludeComponent("bitrix:main.include", "", Array(
         "AREA_FILE_SHOW" => "file",
